@@ -1,0 +1,8 @@
+function MyFavoriteNumber []
+{
+	write(4);
+}
+@@
+/* No variable declarations */
+@@
+	MyFavoriteNumber[];

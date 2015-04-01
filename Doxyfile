@@ -1,0 +1,2 @@
+FILTER_SOURCE_FILES = YES
+INPUT_FILTER = "python /usr/local/bin/doxypy.py"

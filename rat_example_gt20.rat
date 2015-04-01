@@ -1,0 +1,31 @@
+/*
+This is a multi line comment
+Its kind of cute =)
+*/
+
+function MyFavoriteNumber[]
+{
+	write(4);
+}
+function YourFavoriteNumber[num:int]
+{
+	write(num);
+}
+function ThisWillMakeThingsOverTwentyLines[start:int, end:int]
+{
+	while(start < end)
+	{
+		write(start);
+		start := start + 1;
+	}
+	return start;
+}
+@@
+	int	your_fav, where_to_start, when_to_end; /* Declarations */
+@@
+	MyFavoriteNumber[];
+	read(your_fav);
+	YourFavoriteNumber[your_fav];
+	where_to_start = 0;
+	when_to_end = 5;
+	ThisWillMakeThingsOverTwentyLines[where_to_start, where_to_end];
