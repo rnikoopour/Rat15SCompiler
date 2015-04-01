@@ -1,0 +1,13 @@
+function
+if
+else
+endif
+return
+write
+read
+while
+true
+false
+int
+bool
+real
