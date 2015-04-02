@@ -1,5 +1,11 @@
+'''
+@mainpage Rat15S Compiler
 
-
+@section intro_sec Introduction
+This will become a Rat15S compiler.  Currently working on Lexical Analyzer.
+@author Reza Nikoopour
+@author Eric Roe
+'''
 def main():
     tokens = Lexer()
     
