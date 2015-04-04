@@ -13,6 +13,7 @@ function YourFavoriteNumber[num:int]
 }
 @@
 	int	your_fav, where_to_start, when_to_end; /* Declarations */
+	boolean test;
 @@
 	MyFavoriteNumber[];
 	read(your_fav);

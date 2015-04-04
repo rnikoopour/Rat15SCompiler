@@ -23,9 +23,9 @@ function ThisWillMakeThingsOverTwentyLines[start:int, end:int]
 @@
 	int	your_fav, where_to_start, when_to_end; /* Declarations */
 @@
-	MyFavoriteNumber[];
+	your_fav := MyFavoriteNumber[hahaha];
 	read(your_fav);
-	YourFavoriteNumber[your_fav];
-	where_to_start = 0;
-	when_to_end = 5;
-	ThisWillMakeThingsOverTwentyLines[where_to_start, where_to_end];
+	when_to_start := YourFavoriteNumber[your_fav];
+	where_to_start := 0;
+	when_to_end := 5;
+	when_to_end := ThisWillMakeThingsOverTwentyLines[where_to_start, where_to_end];

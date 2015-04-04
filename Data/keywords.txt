@@ -9,5 +9,5 @@ while
 true
 false
 int
-bool
+boolean
 real

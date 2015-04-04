@@ -1,8 +1,35 @@
-function MyFavoriteNumber []
+function MyFavoriteNumber [test, lol, ha:int] real test2;
 {
-	write(4);
+	write (lol);
+	if ((2*3 + 1) > (1/2*122))
+	{
+	read(test2);
+	}
+	else
+	{
+	write(test2);
+	}
+	endif
+
+	while( lol <= test)
+	{
+	write(123);
+	}
+
+return True;
+	
+}
+function try2[]
+{
+	write(lol);
 }
 @@
-/* No variable declarations */
+	int a;
+	real a_b;
 @@
-	MyFavoriteNumber[];
+	a := MyFavoriteNumber[4];
+	if (2 > 3)
+	{
+	   a := 3;
+	   }	   
+	   endif
