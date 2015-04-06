@@ -59,5 +59,6 @@ target/
 html/
 latex/
 
-rat_example.rat
+rat_example*
 rat_example_tokens.txt
+*.swp
