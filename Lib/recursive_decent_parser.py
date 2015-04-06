@@ -577,7 +577,6 @@ def Rat15S():
                 index += 1
                 PrintCurrentTokenInfo()
                 StatementList()
-                exit()
             else:
                 SayErrorAndDie('Expected separator "@@"')        
     else:
