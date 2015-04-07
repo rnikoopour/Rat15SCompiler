@@ -1,3 +1,4 @@
+import inspect
 import pdb
 def p():
     pass
@@ -17,18 +18,26 @@ ERROR_STRING = '\nError on line {1}\nToken type is "{2}"\nLexeme is "{3}"\nDescr
 INPUT_FILE = ''
 MAX_DOUBLE_AT = 2
 TOKENS = []
+OUTPUT_FILE = None
+PrintParseInfo = None
+PrintCurrentTokenInfo = None
 
-def PrintCurrentTokenInfo():
+def PrintCurrentTokenInfoToScreen():
     print('Token: {0}\t\tLexeme: {1}'.format(TOKENS[index].token_type, TOKENS[index].lexeme))
 
+def PrintCurrentTokenInfoToFile():
+    OUTPUT_FILE.write('Token: {0}\t\tLexeme: {1}\n'.format(TOKENS[index].token_type, TOKENS[index].lexeme))
    
 def SayErrorAndDie(description):
     print(ERROR_STRING.format(description, TOKENS[index].line_number, TOKENS[index].token_type, TOKENS[index].lexeme))
     print('Failed to parse file "{0}" exiting'.format(INPUT_FILE))
     sys.exit(1)
 
-def PrintParseInfo(leftside, rightside):
+def PrintParseInfoToScreen(leftside, rightside):
     print('\t{0} -> {1}'.format(leftside, rightside))
+
+def PrintParseInfoToFile(leftside, rightside):
+    OUTPUT_FILE.write('\t{0} -> {1}\n'.format(leftside, rightside))
 
 def Parser(input_file, output_file=None):
     """
@@ -41,9 +50,21 @@ def Parser(input_file, output_file=None):
     global index
     global INPUT_FILE
     global TOKENS
+    global OUTPUT_FILE
+    global PrintParseInfo
+    global PrintCurrentTokenInfo
+    
     INPUT_FILE = input_file
     index = 0
     TOKENS = Lexer(input_file)
+    if output_file is not None:
+        OUTPUT_FILE = open(output_file, 'w')
+        PrintCurrentTokenInfo = PrintCurrentTokenInfoToFile
+        PrintParseInfo = PrintParseInfoToFile
+    else:
+        PrintCurrentTokenInfo = PrintCurrentTokenInfoToScreen
+        PrintParseInfo = PrintParseInfoToScreen
+        
     Rat15S()
 
 def Empty():
@@ -578,9 +599,12 @@ def Rat15S():
                 PrintCurrentTokenInfo()
                 StatementList()
             else:
-                SayErrorAndDie('Expected separator "@@"')        
+                SayErrorAndDie('Expected separator "@@"')
+        while index is not len(TOKENS):
+            StatementList()
     else:
-        SayErrorAndDie('Expected separator "@@"')        
+        SayErrorAndDie('Expected separator "@@"')
+
 
 def Parameter():
     global index
