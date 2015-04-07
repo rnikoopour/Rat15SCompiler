@@ -1,31 +1,4 @@
-function MyFavoriteNumber [test, lol, ha:int] real test2;
-{
-	write (lol);
-	if ((2*3 + 1) > (1/2*122))
-	{
-	read(test2);
-	}
-	else
-	{
-	write(test2);
-	}
-	endif
-
-	while( lol <= test)
-	{
-	write(123);
-	}
-
-return True;
-	
-}
-function try2[]
-{
-	write(lol);
-}
 @@
-	int a;
-	real a_b;
 @@
 	a := MyFavoriteNumber[4];
 	if (2 > 3)
@@ -33,3 +6,4 @@ function try2[]
 	   a := 3;
 	   }	   
 	   endif
+	a := test[ha];

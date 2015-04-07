@@ -1,0 +1,113 @@
+Token: Keyword		Lexeme: function
+	<Opt Function Definitions> -> <Function Definitions>
+	<Function Definitions> -> <Function> <Function Definitions>
+	<Function> -> function <Identifier> [ <Opt Parameter List ] <Opt Declaration List> <Body>
+Token: Identifier		Lexeme: MyFavoriteNumber
+Token: Separator		Lexeme: [
+Token: Separator		Lexeme: ]
+	<Opt Parameter List> -> <Empty>
+	<Empty> -> epsilon
+Token: Separator		Lexeme: {
+	<Opt Declaration List> -> <Empty>
+	<Empty> -> epsilon
+	<Body> -> { <Statement List> }
+Token: Keyword		Lexeme: write
+	<Statement List> -> <Statement>
+	<Statement> -> <Write>
+	<Write> -> write ( <Expression> );
+Token: Separator		Lexeme: (
+Token: Integer		Lexeme: 4
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<Factor> -> <Integer>
+Token: Separator		Lexeme: )
+	<Term Prime> -> epsilon
+	<Expression Prime> -> epsilon
+Token: Separator		Lexeme: ;
+Token: Keyword		Lexeme: function
+	<Function Definitions> -> <Function>
+	<Function> -> function <Identifier> [ <Opt Parameter List ] <Opt Declaration List> <Body>
+Token: Identifier		Lexeme: YourFavoriteNumber
+Token: Separator		Lexeme: [
+Token: Identifier		Lexeme: num
+	<Opt Parameter List> -> <Parameter List>
+	<Parameter List> -> <Parameter>
+	<Parameter> -> <IDs> : <Qualifier>
+	<IDs> -> <Identifier>
+Token: Separator		Lexeme: :
+Token: Keyword		Lexeme: int
+	<Qualifier> -> int
+Token: Separator		Lexeme: ]
+Token: Separator		Lexeme: {
+	<Opt Declaration List> -> <Empty>
+	<Empty> -> epsilon
+	<Body> -> { <Statement List> }
+Token: Keyword		Lexeme: write
+	<Statement List> -> <Statement>
+	<Statement> -> <Write>
+	<Write> -> write ( <Expression> );
+Token: Separator		Lexeme: (
+Token: Identifier		Lexeme: num
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<Factor> -> <Identifier>
+Token: Separator		Lexeme: )
+	<Term Prime> -> epsilon
+	<Expression Prime> -> epsilon
+Token: Separator		Lexeme: ;
+Token: Separator		Lexeme: @@
+Token: Keyword		Lexeme: int
+	<Opt Declaration List> -> <Declaration List>
+	<Declaration List> -> <Declaration>; <Decalartion List>
+Token: Keyword		Lexeme: int
+	<Qualifier> -> int
+Token: Identifier		Lexeme: your_fav
+	<IDs> -> <Identifier>, <IDs>
+Token: Separator		Lexeme: ,
+Token: Identifier		Lexeme: where_to_start
+	<IDs> -> <Identifier>, <IDs>
+Token: Separator		Lexeme: ,
+Token: Identifier		Lexeme: when_to_end
+	<IDs> -> <Identifier>
+Token: Separator		Lexeme: ;
+	<Declaration List> -> <Declaration>;
+Token: Keyword		Lexeme: boolean
+	<Qualifier> -> boolean
+Token: Identifier		Lexeme: test
+	<IDs> -> <Identifier>
+Token: Separator		Lexeme: ;
+Token: Separator		Lexeme: @@
+Token: Identifier		Lexeme: your_fav
+	<Statement List> -> <Statement> <Statement List>
+	<Statement> -> <Assignment>
+	<Assignment> -> <Identifier> := <Expression>;
+Token: Operator		Lexeme: :=
+Token: Identifier		Lexeme: MyFavoriteNumber
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<Factor> -> <Identifier> [ <IDs> ]
+Token: Separator		Lexeme: [
+Token: Integer		Lexeme: 123
+	<IDs> -> <Identifier>
+Token: Separator		Lexeme: ]
+Token: Separator		Lexeme: ;
+	<Term Prime> -> epsilon
+	<Expression Prime> -> epsilon
+Token: Separator		Lexeme: ;
+Token: Identifier		Lexeme: where_to_start
+	<Statement List> -> <Statement>
+	<Statement> -> <Assignment>
+	<Assignment> -> <Identifier> := <Expression>;
+Token: Operator		Lexeme: :=
+Token: Identifier		Lexeme: YourFavoriteNumber
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<Factor> -> <Identifier> [ <IDs> ]
+Token: Separator		Lexeme: [
+Token: Identifier		Lexeme: your_fav
+	<IDs> -> <Identifier>
+Token: Separator		Lexeme: ]
+Token: Separator		Lexeme: ;
+	<Term Prime> -> epsilon
+	<Expression Prime> -> epsilon
+Token: Separator		Lexeme: ;

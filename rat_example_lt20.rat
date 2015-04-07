@@ -15,6 +15,5 @@ function YourFavoriteNumber[num:int]
 	int	your_fav, where_to_start, when_to_end; /* Declarations */
 	boolean test;
 @@
-	MyFavoriteNumber[];
-	read(your_fav);
-	YourFavoriteNumber[your_fav];
+	your_fav := MyFavoriteNumber[123];
+	where_to_start := YourFavoriteNumber[your_fav];
