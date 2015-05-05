@@ -1,9 +1,5 @@
 @@
+	int i,max,sum;
 @@
-	a := MyFavoriteNumber[4];
-	if (2 > 3)
-	{
-	   a := 3;
-	   }	   
-	   endif
-	a := test[ha];
+	while(i<max) 
+		sum:=sum+i;
