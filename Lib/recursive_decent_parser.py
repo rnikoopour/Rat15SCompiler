@@ -111,6 +111,8 @@ def IDs():
         PrintCurrentTokenInfo()
         IDs()
     else:
+        if not (TOKENS[index].token_type == 'Identifier'):
+            SayErrorAndDie('Expected Identifier')            
         PrintParseInfo('<IDs>', '<Identifier>')
 
 
@@ -352,16 +354,15 @@ def Relop():
 def Condition():
     global index
     PrintParseInfo('<Condition>', '<Expression>  <Relop>   <Expression>')
-    PrintCurrentTokenInfo()
     Expression()
     if TOKENS[index].token_type == 'Relop':
         Relop()
+        PrintCurrentTokenInfo()
         Expression()
     else:
         SayErrorAndDie('Expected <Relop>')
         
 def If():
-    pdb.set_trace()
     global index
     else_found = False
     for token in TOKENS[index+2:]:
@@ -376,11 +377,13 @@ def If():
         PrintParseInfo('<If>', 'if  ( <Condition>  ) <Statement> else <Statment> endif')
     else:
         PrintParseInfo('<If>', 'if  ( <Condition>  ) <Statement> endif')
+
     index += 1
 
     if TOKENS[index] == '(':
         PrintCurrentTokenInfo()
         index += 1
+        PrintCurrentTokenInfo()
         Condition()
     else:
         SayErrorAndDie('Expected Separator "("')
@@ -427,6 +430,7 @@ def Return():
 
 def While():
     global index
+    PrintParseInfo('<While>', 'while ( <Condition> ) <Statement>')
     PrintCurrentTokenInfo()
     if TOKENS[index] == 'while':
         index += 1
@@ -465,7 +469,7 @@ def Statement():
     elif TOKENS[index] == 'while':
         PrintParseInfo('<Statement>', '<While>')
         While()
-    elif TOKENS[index+1] == ':=':
+    elif TOKENS[index].token_type == 'Identifier':
         PrintParseInfo('<Statement>', '<Assignment>')
         Assignment()
     else:
@@ -485,7 +489,6 @@ def Assignment():
     Expression()
 
     if TOKENS[index] == ';':
-        PrintCurrentTokenInfo()
         index += 1
     else:
         SayErrorAndDie('Expected ";"')
