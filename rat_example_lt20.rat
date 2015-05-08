@@ -1,19 +1,17 @@
-/*
-This is a multi line comment
-Its kind of cute =)
-*/
-
-function MyFavoriteNumber[]
-{
-	write(4);
-}
-function YourFavoriteNumber[num:int]
-{
-	write(num);
-}
 @@
 	int	your_fav, where_to_start, when_to_end; /* Declarations */
 	boolean test;
 @@
-	your_fav := MyFavoriteNumber[123];
-	where_to_start := YourFavoriteNumber[your_fav];
+	test := true;
+	if (test != false)
+		your_fav := 10;
+	/* prints your favorite number out (you don't get to enter it) */
+	write(your_fav);
+	when_to_end := your_fav + 1;
+	write(where_to_end);
+	where_to_start := 0;
+	while (where_to_start < when_to_end) {
+		write(your_fav)
+		where_to_start := where_to_start + 1;
+	}
+	write(where_to_start + when_to_end)
