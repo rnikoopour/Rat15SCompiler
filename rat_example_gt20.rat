@@ -1,31 +1,36 @@
-/*
-This is a multi line comment
-Its kind of cute =)
-*/
+@@
+	/*
+	This is a multi line comment
+	It's kind of cute =)
+	*/
 
-function MyFavoriteNumber[]
-{
-	write(4);
-}
-function YourFavoriteNumber[num:int]
-{
-	write(num);
-}
-function ThisWillMakeThingsOverTwentyLines[start:int, end:int]
-{
-	while(start < end)
-	{
-		write(start);
-		start := start + 1;
-	}
-	return start;
-}
+	int	a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, alphabet; /* Declarations */
 @@
-	int	your_fav, where_to_start, when_to_end; /* Declarations */
-@@
-	your_fav := MyFavoriteNumber[hahaha];
-	read(your_fav);
-	when_to_start := YourFavoriteNumber[your_fav];
-	where_to_start := 0;
-	when_to_end := 5;
-	when_to_end := ThisWillMakeThingsOverTwentyLines[where_to_start, where_to_end];
+	a := 1;
+	b := 2;
+	c := 3;
+	d := 4;
+	e := 5;
+	f := 6;
+	g := 7;
+	h := 8;
+	i := 9;
+	j := 10;
+	k := 11;
+	l := 12;
+	m := 13;
+	n := 14;
+	o := 15;
+	p := 16;
+	q := 17;
+	r := 18;
+	s := 19;
+	t := 20;
+	u := 21;
+	v := 22;
+	w := 23;
+	x := 24;
+	y := 25;
+	z := 26;
+	alphabet := a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q + r + s + t + u + v + w + x + y + z;
+	write(alphabet);
