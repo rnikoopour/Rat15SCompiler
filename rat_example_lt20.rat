@@ -9,7 +9,7 @@
 	/* prints your favorite number out (you don't get to enter it) */
 	write(your_fav);
 	when_to_end := your_fav + 1;
-	write(where_to_end);
+	write(when_to_end);
 	where_to_start := 0;
 	while (where_to_start < when_to_end) {
 		write(your_fav)
