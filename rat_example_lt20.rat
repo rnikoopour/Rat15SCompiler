@@ -5,6 +5,7 @@
 	test := true;
 	if (test != false)
 		your_fav := 10;
+	endif
 	/* prints your favorite number out (you don't get to enter it) */
 	write(your_fav);
 	when_to_end := your_fav + 1;
