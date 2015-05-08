@@ -12,7 +12,7 @@
 	write(when_to_end);
 	where_to_start := 0;
 	while (where_to_start < when_to_end) {
-		write(your_fav)
+		write(your_fav);
 		where_to_start := where_to_start + 1;
 	}
-	write(where_to_start + when_to_end)
+	write(where_to_start + when_to_end);
